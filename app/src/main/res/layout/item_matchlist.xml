@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView_item_person"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_margin="4dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@android:color/white"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <pl.looksoft.shadowlib.ShadowLayout
+            android:id="@+id/shadowbox_match_movie_poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:shadowLayoutBlur="15dp"
+            android:layout_marginStart="20dp"
+            app:shadowLayoutColor="@color/dropShadowBlue"
+            app:shadowLayoutDx="0dp"
+            app:shadowLayoutDy="5dp"
+            app:shadowLayoutSpread="0dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/image_view_match_movie_poster"
+                app:riv_corner_radius="4dp"
+                android:layout_width="66dp"
+                android:layout_height="84dp"
+                android:layout_centerVertical="true"
+                tools:src="@drawable/ic_menu_alt_video"
+                android:contentDescription="@string/movie_poster" />
+
+        </pl.looksoft.shadowlib.ShadowLayout>
+
+        <TextView
+            android:id="@+id/text_view_movie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/shadowbox_match_movie_poster"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/textDark"
+            android:fontFamily="@font/sf_pro_display_semibold"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat"
+            tools:text="@string/name" />
+
+        <RatingBar
+            android:id="@+id/rating_bar_movie_rating"
+            style="@style/CustomRatingBar"
+            android:progressTint="@color/dropShadowBlueSolid"
+            android:secondaryProgressTint="@color/textLight"
+            android:progressBackgroundTint="@color/textLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/text_view_movie_title"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/text_view_movie_title"/>
+
+        <TextView
+            android:id="@+id/text_view_movie_overview"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignStart="@+id/text_view_movie_title"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="32dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/circe"
+            android:maxLines="1"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/textLight"
+            tools:text="@string/bio" />
+
+        <View
+            android:id="@+id/divider_bottom"
+            android:layout_width="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="#EFEFEF" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
